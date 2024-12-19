@@ -51,7 +51,6 @@ describe('Wordle Game Tests', () => {
 
   it('should enter guess into the first tile of the first row', () => {
     cy.typeWord(guess);
-    cy.wait(5000);
     cy.checkButtonsState(guess);
   });
 

@@ -28,6 +28,7 @@ Cypress.Commands.add('checkButtonsState', (letters) => {
       const key = letter.toLowerCase();
   
       cy.get(`button[data-key="${key}"]`)
+      .should('exist')
       .should('have.attr', 'data-state')
       .and('match', /^(absent|correct|present)$/);
         });
