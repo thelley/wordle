@@ -49,7 +49,7 @@ Here's a breakdown of the main tests in wordle.cy.js:
 ## 6. Future Improvements
 
 * Breaking out tests into individual files as more tests are added. For example, creating a file just for structure (rows/columns/titles).
-* adding more data-driven tests to Invalid guesses and Valid guesses. Changing data,json to be an array of guesses would allow us to loop through multiple guesses.
+* adding more data-driven tests to Invalid guesses and Valid guesses. Changing data.json to contain an array of guesses would allow us to loop through multiple guesses.
 * Adding more verbose logging.
 * Adding more specific Assertions as test cases grow.
 * Adding more test cases for edge cases.
