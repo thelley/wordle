@@ -2,10 +2,7 @@ name: Nightly Cypress Tests
 
 on:
   schedule:
-    # Runs at midnight UTC every day
-    - cron: '0 0 * * *'
-
-  # Allow manual triggering of the workflow as well
+    - cron: '0 6 * * *'  # This will run the action every day at 6 AM UTC (which is 1 AM EST)
   workflow_dispatch:
 
 jobs:
@@ -13,24 +10,23 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '16'  # Specify the Node.js version you're using
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
 
-    - name: Install dependencies
-      run: |
-        npm install
+      - name: Install dependencies
+        run: npm install
 
-    - name: Run Cypress tests
-      run: |
-        npx cypress run --spec "cypress/e2e/wordle.cy.js"  # Specify the path to your test file
+      - name: Run Cypress tests
+        run: |
+          npx cypress run --spec "cypress/e2e/wordle.cy.js"  # Specify the path to your test file
 
-    - name: Upload Cypress Test Results (Optional)
-      uses: actions/upload-artifact@v3
-      with:
-        name: cypress-results
-        path: cypress/results  # Path where your results are stored
+      - name: Upload Cypress test results as artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: cypress-results
+          path: cypress/results
