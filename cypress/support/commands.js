@@ -22,12 +22,8 @@ Cypress.Commands.add('typeWord', (word) => {
       .trigger('keydown', { key: 'Enter', code: 'Enter', which: 13 });
   });
 
-Cypress.Commands.add('checkButtonsState', (letters) => {
-    // Ensure the input is a string
-    if (typeof letters !== 'string') {
-      throw new Error('Input must be a string');
-    }
-  
+Cypress.Commands.add('checkButtonsState', (letters) => { 
+    cy.wait(5000); 
     [...letters].forEach((letter) => {
       const key = letter.toLowerCase();
   

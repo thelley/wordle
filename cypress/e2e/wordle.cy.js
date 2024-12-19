@@ -49,7 +49,7 @@ describe('Wordle Game Tests', () => {
       .should('have.class', 'Row-module_row__pwpBq Row-module_invalid__RNDXZ');
   });
 
-  it('should enter "STARE" into the first tile of the first row', () => {
+  it('should enter guess into the first tile of the first row', () => {
     cy.typeWord(guess);
     cy.wait(5000);
     cy.checkButtonsState(guess);
@@ -57,7 +57,6 @@ describe('Wordle Game Tests', () => {
 
   it('should enter solution into the first tile of the first row', () => {
     cy.typeWord(solution);
-    cy.wait(5000);
     cy.checkButtonsState(solution);
   });
 
