@@ -8,7 +8,7 @@ First, clone this repository to your local machine:
 
 ```bash
 git clone https://github.com/thelley/wordle.git
-cd wordle-cypress-tests
+cd wordle
 ```
 
 ## 2. Install Dependencies
