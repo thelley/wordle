@@ -1,4 +1,4 @@
-# Wordle Game Cypress Test Framework
+# Cypress Test Framework for Wordle
 
 This repository contains an automated Cypress testing framework to test the functionality of a Wordle game. The tests are designed to validate several aspects of the game, such as the number of rows, the number of tiles per row, word validation, and tile state transitions.
 
