@@ -10,6 +10,16 @@ module.exports = defineConfig({
           return null;
         },
       });
+
+      // Use Mochawesome reporter
+      config.reporter = 'mochawesome';
+      config.reporterOptions = {
+        reportDir: 'cypress/results',  // Path where the results are stored
+        overwrite: true,
+        html: false,  // Disable HTML report generation
+        json: true,   // Enable JSON report generation
+      };
+
       return config;
     },
   },
