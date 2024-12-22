@@ -1,0 +1,181 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 5,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-12-22T02:45:45.503Z",
+    "end": "2024-12-22T02:46:14.314Z",
+    "duration": 28811,
+    "testsRegistered": 5,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "7b783372-ec0a-4b11-b74e-fa908fd2d5ab",
+      "title": "",
+      "fullFile": "cypress/e2e/wordle.cy.js",
+      "file": "cypress/e2e/wordle.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "a5c5f25f-60b7-4083-8ca5-7040ac54997a",
+          "title": "Wordle Game Tests",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should have the correct number of rows",
+              "fullTitle": "Wordle Game Tests should have the correct number of rows",
+              "timedOut": null,
+              "duration": 7075,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.Row-module_row__pwpBq').then($rows => {\n  const rowCount = $rows.length;\n  cy.log(`Number of rows: ${rowCount}`);\n  cy.task('logMessage', `Number of rows: ${rowCount}`);\n  expect(rowCount).to.equal(6);\n});",
+              "err": {},
+              "uuid": "681608a0-4194-4852-9d68-862f1ccd007f",
+              "parentUUID": "a5c5f25f-60b7-4083-8ca5-7040ac54997a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should have the correct number of tiles in each row",
+              "fullTitle": "Wordle Game Tests should have the correct number of tiles in each row",
+              "timedOut": null,
+              "duration": 2726,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.Row-module_row__pwpBq').each(($row, index) => {\n  cy.wrap($row).find('[data-testid=\"tile\"]').then($tiles => {\n    const tileCount = $tiles.length;\n    cy.log(`Row ${index + 1} has ${tileCount} tiles.`);\n    expect(tileCount).to.equal(5);\n  });\n});",
+              "err": {},
+              "uuid": "07bd10f9-6275-4025-8b8a-c5a99c07fcf5",
+              "parentUUID": "a5c5f25f-60b7-4083-8ca5-7040ac54997a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should receive an error when typing an invalid word as first guess",
+              "fullTitle": "Wordle Game Tests should receive an error when typing an invalid word as first guess",
+              "timedOut": null,
+              "duration": 3144,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('[data-testid=\"tile\"]').first().click();\ncy.typeWord(failguess);\ncy.get('[role=\"group\"][aria-label=\"Row 1\"]').should('have.class', 'Row-module_row__pwpBq Row-module_invalid__RNDXZ');",
+              "err": {},
+              "uuid": "3826c74f-c748-4505-9ecd-fdc19e9496ed",
+              "parentUUID": "a5c5f25f-60b7-4083-8ca5-7040ac54997a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should enter guess into the first tile of the first row",
+              "fullTitle": "Wordle Game Tests should enter guess into the first tile of the first row",
+              "timedOut": null,
+              "duration": 7512,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.typeWord(guess);\ncy.checkButtonsState(guess);",
+              "err": {},
+              "uuid": "6055c3ac-5286-405c-8553-25f0fdd89d7f",
+              "parentUUID": "a5c5f25f-60b7-4083-8ca5-7040ac54997a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should enter solution into the first tile of the first row",
+              "fullTitle": "Wordle Game Tests should enter solution into the first tile of the first row",
+              "timedOut": null,
+              "duration": 7989,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.typeWord(solution);\ncy.checkButtonsState(solution);",
+              "err": {},
+              "uuid": "a1d9e2d1-833e-44aa-8cb0-4c7daf359f56",
+              "parentUUID": "a5c5f25f-60b7-4083-8ca5-7040ac54997a",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "681608a0-4194-4852-9d68-862f1ccd007f",
+            "07bd10f9-6275-4025-8b8a-c5a99c07fcf5",
+            "3826c74f-c748-4505-9ecd-fdc19e9496ed",
+            "6055c3ac-5286-405c-8553-25f0fdd89d7f",
+            "a1d9e2d1-833e-44aa-8cb0-4c7daf359f56"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 28446,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": true,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

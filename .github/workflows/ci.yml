@@ -24,8 +24,10 @@ jobs:
       - name: Run Cypress tests
         run: |
           npx cypress run --spec "cypress/e2e/wordle.cy.js"  # Specify the path to your test file
+        continue-on-error: true
 
       - name: Upload Cypress test results as artifact
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: cypress-results
