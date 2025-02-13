@@ -54,13 +54,3 @@ Here's a breakdown of the main tests in wordle.cy.js:
 * Adding more specific Assertions as test cases grow.
 * Adding more test cases for edge cases.
 * Most importantly, now that we can enter words and identify the states of the letters (correct, absent, present) we can make progress toward a wordle solver. 
-
-cy.typeWord(word): Types a word into the Wordle input tiles.
-cy.checkButtonsState(word): Verifies that the button states match the expected states for a given word.
-cy.getTodaysSolution(): Fetches the solution for today (you may need to implement this if it's a dynamic API call).
-cy.navigateToGame(): Navigates to the Wordle game page.
-Additional Notes
-Modify cypress.json for specific configuration settings like base URL, environment variables, and more.
-You can add additional tests in the wordle_spec.js file or create new test files for other features.
-Conclusion
-This Cypress test framework is designed to quickly validate the functionality of the Wordle game and ensure the game behaves as expected. You can extend and modify these tests to suit your needs.
